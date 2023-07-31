@@ -1,0 +1,19 @@
+{
+  "name": "ndjson-readablestream",
+  "version": "1.0.0",
+  "description": "A small JS package for reading a ReadableStream of NDJSON",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node ./test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pamelafox/ndjson-readablestream.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pamelafox/ndjson-readablestream/issues"
+  },
+  "homepage": "https://github.com/pamelafox/ndjson-readablestream#readme"
+}
