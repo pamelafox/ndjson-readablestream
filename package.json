@@ -1,12 +1,22 @@
 {
   "name": "ndjson-readablestream",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A small JS package for reading a ReadableStream of NDJSON",
-  "main": "index.js",
+  "main": "dist/ndjson-readablestream.cjs.js",
+  "module": "dist/ndjson-readablestream.esm.js",
+  "browser": "dist/ndjson-readablestream.umd.js",
   "type": "module",
   "scripts": {
-    "test": "node ./test.js"
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "node ./test.mjs"
   },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "rollup": "^1.29.0"
+  },
+  "files": ["dist"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pamelafox/ndjson-readablestream.git"
