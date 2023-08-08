@@ -1,3 +1,5 @@
+import { dts } from "rollup-plugin-dts";
+
 import pkg from './package.json'  assert { type: "json" }
 
 export default [
@@ -23,5 +25,11 @@ export default [
 			{ file: pkg.main, format: 'cjs' },
 			{ file: pkg.module, format: 'es' }
 		]
-	}
+	},
+
+	{
+		input: "index.d.ts",
+		output: [{ file: "dist/ndjson-readablestream.d.ts", format: "es" }],
+		plugins: [dts()],
+	},
 ];
