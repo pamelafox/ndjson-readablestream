@@ -1,4 +1,4 @@
-declare module "index.mjs" {
+declare module "ndjson-readablestream" {
     interface MyObject {
         [key: string]: any;
     }

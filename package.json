@@ -1,10 +1,11 @@
 {
   "name": "ndjson-readablestream",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A small JS package for reading a ReadableStream of NDJSON",
   "main": "dist/ndjson-readablestream.cjs.js",
   "module": "dist/ndjson-readablestream.esm.js",
   "browser": "dist/ndjson-readablestream.umd.js",
+  "types": "dist/ndjson-readablestream.umd.js",
   "type": "module",
   "scripts": {
     "build": "rollup -c",
