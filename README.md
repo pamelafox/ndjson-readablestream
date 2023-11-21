@@ -57,3 +57,18 @@ Format the code:
 ```
 npm run format
 ```
+
+## Publishing a new version
+
+These instructions are for maintainers only.
+
+1. Bump the version in package.json using either:
+   - `npm version patch`
+   - `npm version minor`
+   - `npm version major`
+2. Run `npm install` to update package-lock.json
+3. Update CHANGELOG.md with description of changes in version
+4. Create a pull request
+5. Once merged, checkout main and run:
+   1. `npm login`
+   2. `npm publish`
