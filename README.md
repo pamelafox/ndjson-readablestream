@@ -8,15 +8,15 @@ and returns an [AsyncGenerator](https://developer.mozilla.org/en-US/docs/Web/Jav
 Example usage:
 
 ```javascript
-import readNDJSONStream from "ndjson-readablestream";
+import readNDJSONStream from 'ndjson-readablestream';
 
-const response = await fetch("/chat", {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({message: "Hi, how are you?"})
+const response = await fetch('/chat', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ message: 'Hi, how are you?' }),
 });
 for await (const event of readNDJSONStream(response.body)) {
-    console.log("Received", event);
+  console.log('Received', event);
 }
 ```
 
@@ -25,15 +25,35 @@ Example usage in a webpage:
 ```html
 <script src="https://cdn.jsdelivr.net/npm/ndjson-readablestream@1.0.1/dist/ndjson-readablestream.umd.js"></script>
 <script>
-const response = await fetch("/chat", {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({message: "Hi, how are you?"})
-});
-for await (const event of readNDJSONStream(response.body)) {
-    console.log("Received", event);
-}
+  const response = await fetch("/chat", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({message: "Hi, how are you?"})
+  });
+  for await (const event of readNDJSONStream(response.body)) {
+      console.log("Received", event);
+  }
 </script>
 ```
 
-For more details and examples, read my blog post on  [Fetching JSON over streaming HTTP](http://blog.pamelafox.org/2023/08/fetching-json-over-streaming-http.html).
+For more details and examples, read my blog post on [Fetching JSON over streaming HTTP](http://blog.pamelafox.org/2023/08/fetching-json-over-streaming-http.html).
+
+## Contributing
+
+Install the development dependencies:
+
+```
+npm install
+```
+
+Run the tests:
+
+```
+npm test
+```
+
+Format the code:
+
+```
+npm run format
+```
