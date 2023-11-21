@@ -2,7 +2,7 @@ import { ReadableStream } from 'stream/web';
 
 import readNDJSONStream from "./index.mjs";
 
-var queue = [new TextEncoder().encode("{\"foo\":\"bar\"}\n{\"foo\":\"bar\"}\n")];
+var queue = [new TextEncoder().encode("{\"foo\":\"bar\"}\n{\"ｆｏｏ\":\"ｂａｒ\"}\n")];
 var stream = new ReadableStream({
   pull(controller) {
     var chunk = queue.shift();
@@ -22,7 +22,7 @@ for await (const event of readNDJSONStream(stream)) {
 }
 
 
-if (results.length == 2 && JSON.stringify(results) == '[{"foo":"bar"},{"foo":"bar"}]') {
+if (results.length == 2 && JSON.stringify(results) == '[{"foo":"bar"},{"ｆｏｏ":"ｂａｒ"}]') {
   console.log("Tests passed!");
   process.exit(0);
 } else {
