@@ -1,6 +1,6 @@
 {
   "name": "ndjson-readablestream",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A small JS package for reading a ReadableStream of NDJSON",
   "main": "dist/ndjson-readablestream.cjs.js",
   "module": "dist/ndjson-readablestream.esm.js",
