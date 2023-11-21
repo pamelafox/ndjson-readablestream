@@ -1,10 +1,11 @@
 export default async function* (readableStream) {
     const reader = readableStream.getReader();
     let runningText = "";
+    let decoder = new TextDecoder("utf-8");
     while (true) {
         const { done, value } = await reader.read();
         if (done) break;
-        var text = new TextDecoder("utf-8").decode(value);
+        var text = decoder.decode(value, {stream: true});
         const objects = text.split("\n");
         for (const obj of objects) {
             try {
