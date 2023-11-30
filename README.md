@@ -70,5 +70,6 @@ These instructions are for maintainers only.
 3. Update CHANGELOG.md with description of changes in version
 4. Create a pull request
 5. Once merged, checkout main and run:
+   1. `npm run build`
    1. `npm login`
-   2. `npm publish`
+   1. `npm publish`
