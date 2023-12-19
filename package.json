@@ -6,20 +6,19 @@
   "module": "dist/ndjson-readablestream.esm.js",
   "browser": "dist/ndjson-readablestream.umd.js",
   "types": "dist/ndjson-readablestream.d.ts",
-  "type": "module",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "test": "node ./test.mjs",
+    "test": "vitest",
     "format": "prettier --list-different --write .",
     "format:check": "prettier --check ."
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.3",
-    "@rollup/plugin-node-resolve": "^15.1.0",
     "prettier": "^3.0.3",
     "rollup": "^3.27.2",
-    "rollup-plugin-dts": "^5.3.1"
+    "rollup-plugin-dts": "^5.3.1",
+    "vitest": "^1.0.4"
   },
   "prettier": {
     "tabWidth": 2,
