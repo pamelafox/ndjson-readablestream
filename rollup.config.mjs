@@ -1,4 +1,5 @@
 import { dts } from 'rollup-plugin-dts';
+import commonjs from '@rollup/plugin-commonjs';
 
 import pkg from './package.json' assert { type: 'json' };
 
@@ -25,6 +26,7 @@ export default [
       { file: pkg.main, format: 'cjs' },
       { file: pkg.module, format: 'es' },
     ],
+    plugins: [commonjs()],
   },
 
   {
