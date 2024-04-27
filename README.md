@@ -62,6 +62,7 @@ npm run format
 
 These instructions are for maintainers only.
 
+0. Create a branch
 1. Bump the version in package.json using either:
    - `npm version patch`
    - `npm version minor`

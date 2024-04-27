@@ -2,7 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.1.0] - Jan. 12, 2023
+## [1.2.0] - Apr. 27, 2024
+
+- Change to TypeScript type notation to improve type extendability.
+
+## [1.1.0] - Jan. 12, 2024
 
 - Fix for CJS module error when running vitest on imported package.
 
