@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] - July 29, 2025
+
+- Change to TypeScript function definition to comply with ESLint.
+
 ## [1.2.0] - Apr. 27, 2024
 
 - Change to TypeScript type notation to improve type extendability.
