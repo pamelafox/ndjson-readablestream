@@ -26,3 +26,33 @@ test('parses an NDJSON stream correctly', async () => {
   expect(results.length).toBe(2);
   expect(JSON.stringify(results)).toBe('[{"foo":"bar"},{"ｆｏｏ":"ｂａｒ"}]');
 });
+
+test('parses multi-byte characters', async () => {
+  const encoder = new TextEncoder();
+  const queue = [
+    encoder.encode('{"hello":"'),
+    new Uint8Array([240, 159]),
+    new Uint8Array([152, 131]),
+    encoder.encode('"}\n{}'),
+  ];
+  const stream = new ReadableStream({
+    pull(controller) {
+      const chunk = queue.shift();
+      if (chunk) {
+        controller.enqueue(chunk);
+      } else {
+        controller.close();
+      }
+    },
+    cancel() {},
+    type: 'bytes',
+  });
+
+  const results = [];
+  for await (const event of readNDJSONStream(stream)) {
+    results.push(event);
+  }
+
+  expect(results.length).toBe(2);
+  expect(JSON.stringify(results)).toBe('[{"hello":"😃"},{}]');
+});

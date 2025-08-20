@@ -1,13 +1,10 @@
 export default async function* (readableStream) {
-  const reader = readableStream.getReader();
+  const reader = readableStream.pipeThrough(new TextDecoderStream('utf-8')).getReader();
   let runningText = '';
-  let decoder = new TextDecoder('utf-8');
   while (true) {
     const { done, value } = await reader.read();
     if (done) break;
-    var text = decoder.decode(value, { stream: true });
-    const objects = text.split('\n');
-    for (const obj of objects) {
+    for (const obj of value.split('\n')) {
       try {
         runningText += obj;
         let result = JSON.parse(runningText);
