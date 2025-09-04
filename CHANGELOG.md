@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.0] - Sept. 3, 2025
+
+- Use TextDecoderStream instead of decode({stream: true}) for simpler code.
+
 ## [1.3.0] - July 29, 2025
 
 - Change to TypeScript function definition to comply with ESLint.
